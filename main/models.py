@@ -36,6 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(blank=True, null=True)
+    password = models.CharField(max_length=255)
     
     groups = models.ManyToManyField(
         Group,
